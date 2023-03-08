@@ -12,7 +12,7 @@ function setup() {
 
   for (let y = 0; y<height; y+=50){
     for (let x = 0; x <height; x+=50){
-      spawnBox(x,y,50,random(y*/mouseX));
+      spawnBox(x,y,50,random(y*0.2));
     }
   }
 }
