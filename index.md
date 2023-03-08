@@ -3,5 +3,7 @@
 ## Demos
 - [Moving Rectangle](movingRectangle)
 - [Generative Art](generativeArt)
-- [bouncingball] (Bouncing ball)
+- [bouncingball] (bouncing-ball)
+- [cubicdisarray] (cubic disarray)
 ##Projects
+- [Array and Object Notation](array-assignment)
