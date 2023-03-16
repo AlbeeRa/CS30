@@ -4,30 +4,16 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background ("white");
-  lotsLine(100,100);
+
 }
 
 function draw() {
+  multicircle();
 }
-function lotsLine(cols,rows){
-  for (let x = 0; x< cols; x++){
-    for (let y = 0; y < rows; y++){
-      let spaceAmount = width/cols;
-      diagonalLine(x*spaceAmount,y*spaceAmount,spaceAmount);
-    }
+function multicircle(){
+  for (let i = 0; i < 20;i+ 50){
+    fill(random(255));
+    noStroke();
+    circle(100,200,i);
   }
-}
-
-function diagonalLine(x,y,spaceline){
-  if (random(100) > 50) {
-  //postive slope
-    fill(random(255),random(255),random(255));
-    rect(x - spaceline/2, y + spaceline/2, x + spaceline/2, y - spaceline/2);
-  }
-  else {
-    //negative slope
-    fill(random(255),random(255),random(255));
-    rect(x - spaceline/2, y - spaceline/2, x + spaceline/2, y + spaceline/2);
-  }
-
 }
