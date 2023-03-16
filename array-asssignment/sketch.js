@@ -1,19 +1,20 @@
 // Generative Art [[Messing around]]
 // March 3rd, 2023
 
+let bubbles = [];
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background ("white");
-
+  
 }
 
 function draw() {
-  multicircle();
+  spawn()
 }
-function multicircle(){
-  for (let i = 0; i < 20;i+ 50){
-    fill(random(255));
-    noStroke();
-    circle(100,200,i);
+
+function spawn(){
+  for (let i= 0; i<width; i ++){
+    for (let j = 0; j< height;j++){}
+      fill(random(255),random(255),random(255));
+      ellipse(mouseX,mouseY,random(100),random(100));
+    }
   }
-}
