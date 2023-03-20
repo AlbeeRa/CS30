@@ -9,4 +9,4 @@
 - [Perlin and Timing](perlin)
 
 ## Projects
-- [Array and Object Notation](bouncing-balls)
+- [Array and Object Notation](array-asssignment)
