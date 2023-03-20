@@ -1,5 +1,5 @@
 // Albee Raida
-// Assignment: Generative Art [Rainbow sphereralization]
+// Assignment: Generative Art [Rainbow sphereralization] //YOU'RE EYES WILL HURT
 // March 14th, 2023
 
 let nums = [100,25,46,72];
@@ -22,7 +22,7 @@ function circles(posX,posY){
   };
   for (let i = 0; i<20; i++){ //repeating circle to make a design
     stroke(100);
-    fill(random(255),random(255),random(255),100);
+    fill(random(255),random(255),random(255),50);
     ellipse(circleD.x,circleD.y,random(200),nums[i]+100);
   }
 }
