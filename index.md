@@ -8,5 +8,5 @@
 - [Terrain Generation](terrain-generation)
 - [Perlin and Timing](perlin)
 
-##Projects
+## Projects
 - [Array and Object Notation](array-asssignment)
