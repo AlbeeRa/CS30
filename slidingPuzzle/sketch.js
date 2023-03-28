@@ -15,6 +15,12 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   let w = windowWidth/ROWS;
   let h = windowHeight/COLS;
+
+  for (let i = 0; i < COLS; i ++){
+    for (let j = 0; j < ROWS; j++){
+      let img = createImage(w,h);
+    }
+  }
 }
 
 function draw() {
