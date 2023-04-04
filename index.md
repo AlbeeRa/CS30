@@ -8,6 +8,9 @@
 - [Terrain Generation](terrain-generation)
 - [Perlin and Timing](perlin)
 - [Grid Demo](2dGrid)
+- [Colour Game](colourGame)
+- [Game of Life](gameLife)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
+- [Cowboy Bebop Puzzle](slidingPuzzle)
