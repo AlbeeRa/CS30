@@ -1,8 +1,8 @@
 class Tile {
   
-    constructor(i, img) {
-      this.index = i;
-      this.img = img;    
-    }
-    
+  constructor(i, img) {
+    this.index = i;
+    this.img = img;    
   }
+  
+}

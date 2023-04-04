@@ -1,7 +1,8 @@
-class Tile{ ///current piece's position
-
-  constructor(i,img){ ///The purpose of a constructor is to create a new object and set values for any existing object properties
+class Tile {
+  
+  constructor(i, img) {
     this.index = i;
-    this.img = img;
+    this.img = img;    
   }
+  
 }

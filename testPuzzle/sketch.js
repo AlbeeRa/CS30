@@ -26,7 +26,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
   // pixel dimensions of each tiles
   w = width / cols;
   h = height / rows;
