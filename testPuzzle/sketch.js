@@ -1,17 +1,7 @@
-// Slide Puzzle Image
-// The Coding Train / Daniel Shiffman
-// https://thecodingtrain.com/CodingChallenges/165-slide-puzzle.html
-// https://youtu.be/uQZLzhrzEs4
 
-// Image: https://editor.p5js.org/codingtrain/sketches/o_ljlLilZ
-// Video: https://editor.p5js.org/codingtrain/sketches/YnLX7bGwW
-// Canvas: https://editor.p5js.org/codingtrain/sketches/MVCd9trLw
+let kamisato;
 
-
-// Source image to chop up
-let source;
-
-// Tiles configuration
+// Tiles
 let tiles = [];
 let cols = 4;
 let rows = 4;
@@ -20,9 +10,9 @@ let w, h;
 // Order of tiles
 let board = [];
 
-// Loading the image
+// image
 function preload() {
-  source = loadImage("ayato.png");
+  kamisato = loadImage("ayato.png");
 }
 
 function setup() {
@@ -31,13 +21,13 @@ function setup() {
   w = width / cols;
   h = height / rows;
   
-  // Chop up source image into tiles
+  // Chop up kamisato image 
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       let x = i * w;
       let y = j * h;
       let img = createImage(w, h);
-      img.copy(source, x, y, w, h, 0, 0, w, h);
+      img.copy(kamisato, x, y, w, h, 0, 0, w, h);
       let index = i + j * cols;
       board.push(index);
       let tile = new Tile(index, img);
@@ -48,6 +38,7 @@ function setup() {
   // Remove the last tile
   tiles.pop();
   board.pop();
+
   // -1 means empty spot
   board.push(-1);
   
@@ -63,7 +54,6 @@ function swap(i, j, arr) {
 }
 
 // Pick a random spot to attempt a move
-// This should be improved to select from only valid moves
 function randomMove(arr) {
   let r1 = floor(random(cols));
   let r2 = floor(random(rows));
@@ -77,7 +67,7 @@ function simpleShuffle(arr) {
   }
 }
 
-// Move based on click
+// Move click
 function mousePressed() {
   let i = floor(mouseX / w);
   let j = floor(mouseY / h);
@@ -103,7 +93,7 @@ function draw() {
     }
   }
   
-  // Show it as grid
+  // Show as grid
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       let x = i * w;
@@ -114,7 +104,7 @@ function draw() {
     }
   }
   
-  // If it is solved
+  // If solved
   if (isSolved()) {
     console.log("SOLVED");
   }
