@@ -138,7 +138,7 @@ function isNeighbor(i, j, x, y) {
     return false;
   }
 
-  if (abs(i - x) == 1 || abs(j - y) == 1) {
+  if (abs(i - x) === 1 || abs(j - y) === 1) {
     return true;
   }
   return false;
@@ -149,6 +149,8 @@ function isNeighbor(i, j, x, y) {
 // to track blank spot
 function findBlank() {
   for (let i = 0; i < board.length; i++) {
-    if (board[i] == -1) return i;
+    if (board[i] === -1){
+      return i;
+    }
   }
 }
