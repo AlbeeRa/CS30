@@ -12,11 +12,11 @@ let board = [];
 
 // image
 function preload() {
-  kamisato = loadImage("ayato.png");
+  kamisato = loadImage("bebop.png");
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(400, 400);
   // pixel dimensions of each tiles
   w = width / cols;
   h = height / rows;
