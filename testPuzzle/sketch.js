@@ -1,11 +1,15 @@
+// Bebop sliding puzzle
+// Albee Raida
+// 27th March,2023
+//extra: sounds
 
 let spike;
 let Sound;
-let winner;
+
 // Tiles
 let tiles = [];
-let cols = 2;
-let rows = 2;
+let COLS = 2;
+let ROWS = 2;
 let w, h;
 
 // Order of tiles
@@ -21,17 +25,17 @@ function preload() {
 function setup() {
   createCanvas(400, 400);
   // pixel dimensions of each tiles
-  w = width / cols;
-  h = height / rows;
+  w = width / COLS;
+  h = height / ROWS;
   
   // Chop up image 
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
+  for (let i = 0; i < COLS; i++) {
+    for (let j = 0; j < ROWS; j++) {
       let x = i * w;
       let y = j * h;
       let img = createImage(w, h);
       img.copy(spike, x, y, w, h, 0, 0, w, h);   //copy(Image, sx, sy, sw, sh, dx, dy, dw, dh)
-      let index = i + j * cols;
+      let index = i + j * COLS;
       board.push(index);
       let tile = new Tile(index, img);
       tiles.push(tile);
@@ -50,16 +54,16 @@ function setup() {
 }
 
 // Swap two pieces of an array
-function swap(i, j, arr) {
-  let temp = arr[i];
-  arr[i] = arr[j];
-  arr[j] = temp;
+function swap(i, j, array) {
+  let temp = array[i];
+  array[i] = array[j];
+  array[j] = temp;
 }
 
 // Pick a random spot to move
 function randomMove(arr) {
-  let r1 = floor(random(cols));
-  let r2 = floor(random(rows));
+  let r1 = floor(random(COLS));
+  let r2 = floor(random(ROWS));
   move(r1, r2, arr);
 }
 
@@ -85,9 +89,9 @@ function draw() {
   background(0);
 
   // Draw the current board
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      let index = i + j * cols;
+  for (let i = 0; i < COLS; i++) {
+    for (let j = 0; j < ROWS; j++) {
+      let index = i + j * COLS;
       let x = i * w;
       let y = j * h;
       let tileIndex = board[index];
@@ -99,8 +103,8 @@ function draw() {
   }
   
   // Show as grid
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
+  for (let i = 0; i < COLS; i++) {
+    for (let j = 0; j < ROWS; j++) {
       let x = i * w;
       let y = j * h;
       strokeWeight(2);
@@ -131,12 +135,12 @@ function isSolved() {
 // Swap two pieces
 function move(i, j, arr) {
   let blank = findBlank();
-  let blankCol = blank % cols;
-  let blankRow = floor(blank / rows);
+  let blankCol = blank % COLS;
+  let blankRow = floor(blank / ROWS);
   
   // Double check valid move
   if (isNeighbor(i, j, blankCol, blankRow)) {
-    swap(blank, i + j * cols, arr);
+    swap(blank, i + j * COLS, arr);
   }
 }
 
