@@ -8,8 +8,8 @@ let Sound;
 
 // Tiles
 let tiles = [];
-let COLS = 2;
-let ROWS = 2;
+let COLS = 5;
+let ROWS = 5;
 let w, h;
 
 // Order of tiles
@@ -19,7 +19,6 @@ let board = [];
 function preload() {
   spike = loadImage("bebop.png");
   Sound = loadSound("frog.mp3");
-  winner = loadSound("mario.mp3");
 }
 
 function setup() {

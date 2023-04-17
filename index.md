@@ -13,4 +13,4 @@
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
-- [Cowboy Bebop Puzzle](slidingPuzzle)
+- [Cowboy Bebop Puzzle](puzzle)
