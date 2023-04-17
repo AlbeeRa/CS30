@@ -1,18 +1,21 @@
 
-let kamisato;
-
+let spike;
+let Sound;
+let winner;
 // Tiles
 let tiles = [];
-let cols = 4;
-let rows = 4;
+let cols = 2;
+let rows = 2;
 let w, h;
 
 // Order of tiles
 let board = [];
 
-// image
+// image & sound
 function preload() {
-  kamisato = loadImage("bebop.png");
+  spike = loadImage("bebop.png");
+  Sound = loadSound("frog.mp3");
+  winner = loadSound("mario.mp3");
 }
 
 function setup() {
@@ -21,13 +24,13 @@ function setup() {
   w = width / cols;
   h = height / rows;
   
-  // Chop up kamisato image 
+  // Chop up image 
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       let x = i * w;
       let y = j * h;
       let img = createImage(w, h);
-      img.copy(kamisato, x, y, w, h, 0, 0, w, h);
+      img.copy(spike, x, y, w, h, 0, 0, w, h);   //copy(Image, sx, sy, sw, sh, dx, dy, dw, dh)
       let index = i + j * cols;
       board.push(index);
       let tile = new Tile(index, img);
@@ -39,28 +42,28 @@ function setup() {
   tiles.pop();
   board.pop();
 
-  // -1 means empty spot
+  // -1 [empty spot]
   board.push(-1);
   
   // Shuffle the board
   simpleShuffle(board);
 }
 
-// Swap two elements of an array
+// Swap two pieces of an array
 function swap(i, j, arr) {
   let temp = arr[i];
   arr[i] = arr[j];
   arr[j] = temp;
 }
 
-// Pick a random spot to attempt a move
+// Pick a random spot to move
 function randomMove(arr) {
   let r1 = floor(random(cols));
   let r2 = floor(random(rows));
   move(r1, r2, arr);
 }
 
-// Shuffle the board
+// Shuffle board
 function simpleShuffle(arr) {
   for (let i = 0; i < 1000; i++) {
     randomMove(arr);
@@ -72,6 +75,8 @@ function mousePressed() {
   let i = floor(mouseX / w);
   let j = floor(mouseY / h);
   move(i,j,board);
+  Sound.play(); //sound with each move
+
 }
 
 
@@ -112,13 +117,16 @@ function draw() {
 
 // Check if solved
 function isSolved() {
+  let solve = false
   for (let i = 0; i < board.length-1; i++) {
     if (board[i] !== tiles[i].index) {
       return false;
     }
   }
   return true;
+
 }
+
 
 // Swap two pieces
 function move(i, j, arr) {
@@ -144,8 +152,6 @@ function isNeighbor(i, j, x, y) {
   return false;
 }
 
-
-// Probably could just use a variable
 // to track blank spot
 function findBlank() {
   for (let i = 0; i < board.length; i++) {
