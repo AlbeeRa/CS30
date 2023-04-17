@@ -10,6 +10,7 @@
 - [Grid Demo](2dGrid)
 - [Colour Game](colourGame)
 - [Game of Life](gameLife)
+- [Walker OOP](walker)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)

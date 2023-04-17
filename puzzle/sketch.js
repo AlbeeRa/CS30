@@ -1,10 +1,10 @@
 // Bebop sliding puzzle
 // Albee Raida
 // 27th March,2023
-//extra: sounds
+//extra: sounds, class
 
 let spike;
-let Sound;
+let sound;
 
 // Tiles
 let tiles = [];
@@ -18,7 +18,7 @@ let board = [];
 // image & sound
 function preload() {
   spike = loadImage("bebop.png");
-  Sound = loadSound("frog.mp3");
+  sound = loadSound("frog.mp3");
 }
 
 function setup() {
@@ -36,7 +36,7 @@ function setup() {
       img.copy(spike, x, y, w, h, 0, 0, w, h);   //copy(Image, sx, sy, sw, sh, dx, dy, dw, dh)
       let index = i + j * COLS;
       board.push(index);
-      let tile = new Tile(index, img);
+      let tile = new Tile(index, img); 
       tiles.push(tile);
     }
   }
@@ -78,7 +78,7 @@ function mousePressed() {
   let i = floor(mouseX / w);
   let j = floor(mouseY / h);
   move(i,j,board);
-  Sound.play(); //sound with each move
+  sound.play(); //sound with each move
 
 }
 
