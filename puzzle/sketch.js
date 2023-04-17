@@ -8,8 +8,8 @@ let Sound;
 
 // Tiles
 let tiles = [];
-let COLS = 5;
-let ROWS = 5;
+let COLS = 4;
+let ROWS = 4;
 let w, h;
 
 // Order of tiles
@@ -22,7 +22,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(800, 800);
   // pixel dimensions of each tiles
   w = width / COLS;
   h = height / ROWS;
