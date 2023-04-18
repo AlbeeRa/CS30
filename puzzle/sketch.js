@@ -1,7 +1,7 @@
 // Bebop sliding puzzle
 // Albee Raida
 // 27th March,2023
-//extra: sounds, class
+//extra: sounds, class and copy
 
 let spike;
 let sound;
