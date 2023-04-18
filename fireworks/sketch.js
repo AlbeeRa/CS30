@@ -50,7 +50,7 @@ function mousePressed(){
   }
 }
 function spawnSpark(){
-  let yo = new Spark(mouseX,mouseY,random(-10,10),random(-10,10));
+  let yo = new Spark(mouseX,mouseY,random(-10,10),random(-100,100));
   fireworks.push(yo);
 
 }
