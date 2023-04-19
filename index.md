@@ -11,6 +11,8 @@
 - [Colour Game](colourGame)
 - [Game of Life](gameLife)
 - [Walker OOP](walker)
+- [Fireworks OOP](fireworks)
+- [Ball Array](ball-array)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
