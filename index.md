@@ -13,6 +13,7 @@
 - [Walker OOP](walker)
 - [Fireworks OOP](fireworks)
 - [Ball Array](ball-array)
+- [p5.play demo](p5play)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
