@@ -15,6 +15,7 @@
 - [Ball Array](ball-array)
 - [p5.play demo](p5play)
 - [using timers](timers)
+- [Fractal Circle](fractal-circles)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
