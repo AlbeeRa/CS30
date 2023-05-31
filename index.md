@@ -16,6 +16,7 @@
 - [p5.play demo](p5play)
 - [using timers](timers)
 - [Fractal Circle](fractal-circles)
+- [Sierpinski triangle](sierpinski)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
